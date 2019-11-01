@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class = "jumbotron">
+            <h1 class="display-4 text-center">My Team</h1>
+        </div>
+        <div class = "container" id = "mainContainer">
+    
+        </div>
+    </body>
+    
+    </div>
+        <script>
+            const team = require('./app.js')
+            $(document).ready(function(){
+                for (var x = 0; x <= ${team.length}-1; x++){
+                    $("<div>").attr({
+                        class: "card",
+                        style: "width: 18rem",
+                        id: "card" + x
+                    }).appendTo("#mainContainer");
+                    $("<div>").attr({
+                        class: "card-body",
+                        id: "cardBody" + x
+                    }).appendTo("#card" + x);
+                    $("<h5>").attr({
+                        class: "card-title",
+                    }).text(team[x].name).appendTo("#cardBody" + x);
+                    $("<h6>").attr({
+                        class: "card-subtitle mb-2 text-muted",
+                    }).text("Card subtitle").appendTo("#cardBody" + x);
+                    $("<ul>").attr({
+                        class: "list-group list-group-flush",
+                        id: "listGroup" + x
+                    }).appendTo("#cardBody" + x);
+                    $("<li>").attr({
+                        class: "list-group-item",
+                    }).text("point 1").appendTo("#listGroup" + x);
+                    $("<li>").attr({
+                        class: "list-group-item",
+                    }).text("point 2").appendTo("#listGroup" + x);
+                    $("<li>").attr({
+                        class: "list-group-item",
+                    }).text("point 3").appendTo("#listGroup" + x);
+                }
+        })
+        </script>
+    </html>`
